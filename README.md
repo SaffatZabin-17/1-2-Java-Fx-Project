@@ -1,6 +1,6 @@
 # 1-2-Java-Fx-Project
 
-Published By: Sardar Md. Saffat Zabin
+Published By: Sardar Md. Saffat Zabin,
               BUET CSE-19
 
 Just your basic Java Fx Project. It was done as a part of Level 1- Term 2 final project
