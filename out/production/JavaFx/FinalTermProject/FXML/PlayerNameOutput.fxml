@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FinalTermProject.Controller.PlayerNameOutputController">
+   <children>
+      <AnchorPane prefHeight="62.0" prefWidth="900.0" style="-fx-background-color: #990000;" AnchorPane.bottomAnchor="540.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutY="17.0" prefHeight="45.0" prefWidth="900.0" text="Football Manager 2021" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="17.0">
+               <font>
+                  <Font name="Impact" size="24.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="60.0" prefHeight="542.0" prefWidth="189.0" style="-fx-background-color: #1F1F1F;">
+         <children>
+            <MenuButton layoutX="16.0" layoutY="145.0" mnemonicParsing="false" text="Search Players">
+              <items>
+                <MenuItem fx:id="SearchByName" mnemonicParsing="false" onAction="#SearchByNameAction" text="Search By Name" />
+                  <MenuItem fx:id="SearchByCountry" mnemonicParsing="false" onAction="#SearchByCountryAction" text="Search By Country" />
+                  <MenuItem fx:id="SearchByPosition" mnemonicParsing="false" onAction="#SearchByPositionAction" text="Search By Position" />
+                  <MenuItem fx:id="SearchBySalary" mnemonicParsing="false" onAction="#SearchBySalaryAction" text="Search By Salary Range" />
+                  <MenuItem fx:id="CountryWisePlayerCount" mnemonicParsing="false" onAction="#CountryWisePlayerCountAction" text="Country Wise Player Count" />
+                  <MenuItem fx:id="MaxSalary" mnemonicParsing="false" onAction="#maxSalaryAction" text="Player(s) with the Maximum Salary" />
+                  <MenuItem fx:id="MaxAge" mnemonicParsing="false" onAction="#maxAgeAction" text="Player(s) with the Maximum Age" />
+                  <MenuItem fx:id="MaxHeight" mnemonicParsing="false" onAction="#maxHeightAction" text="Player(s) with the Maximum Height" />
+                  <MenuItem fx:id="TotalSalary" mnemonicParsing="false" onAction="#totalSalaryAction" text="Total Yearly Salary" />
+              </items>
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MenuButton>
+            <Button fx:id="ExitButton" layoutX="41.0" layoutY="435.0" mnemonicParsing="false" onAction="#ExitButtonAction" text="Exit System" AnchorPane.bottomAnchor="69.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="437.0">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="SellPlayers" layoutX="16.0" layoutY="335.0" mnemonicParsing="false" onAction="#sellPlayersAction" prefHeight="34.0" prefWidth="159.0" text="Sell Players" AnchorPane.bottomAnchor="171.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="335.0">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="BuyPlayers" layoutX="15.0" layoutY="237.0" mnemonicParsing="false" onAction="#buyPlayersAction" prefHeight="34.0" prefWidth="159.0" text="Buy Players">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="DashboardButton" layoutX="16.0" layoutY="56.0" mnemonicParsing="false" onAction="#dashboardButtonAction" prefHeight="34.0" prefWidth="159.0" text="Dashboard">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="186.0" layoutY="59.0" prefHeight="78.0" prefWidth="711.0" AnchorPane.bottomAnchor="462.0" AnchorPane.leftAnchor="189.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+         <children>
+            <Label layoutX="22.0" layoutY="28.0" text="Enter Player Name: ">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="PlayerNameInput" layoutX="162.0" layoutY="26.0" onAction="#playerNameInput" prefHeight="25.0" prefWidth="182.0" promptText="Player Name">
+               <font>
+                  <Font name="Impact" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Button fx:id="SearchButton" layoutX="500.0" layoutY="22.0" mnemonicParsing="false" onAction="#SearchButtonAction" prefHeight="34.0" prefWidth="90.0" text="Search">
+               <font>
+                  <Font name="Impact" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="ResetButton" layoutX="607.0" layoutY="22.0" mnemonicParsing="false" onAction="#ResetButtonAction" prefHeight="34.0" prefWidth="90.0" text="Reset">
+               <font>
+                  <Font name="Impact" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="189.0" layoutY="142.0" prefHeight="465.0" prefWidth="714.0" style="-fx-background-color: #990000;" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="189.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="142.0">
+         <children>
+            <AnchorPane layoutX="28.0" layoutY="14.0" prefHeight="62.0" prefWidth="365.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label fx:id="PlayerNameOutput" contentDisplay="CENTER" layoutX="8.0" layoutY="5.0" prefHeight="52.0" prefWidth="352.0">
+                     <font>
+                        <Font name="Impact" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="28.0" layoutY="86.0" prefHeight="43.0" prefWidth="257.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="10.0" layoutY="8.0" prefHeight="28.0" prefWidth="117.0" text="Nationality:  ">
+                     <font>
+                        <Font name="Impact" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="PlayerCountryOutput" layoutX="127.0" layoutY="8.0" prefHeight="28.0" prefWidth="117.0">
+                     <font>
+                        <Font name="Impact" size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="28.0" layoutY="140.0" prefHeight="43.0" prefWidth="257.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="10.0" layoutY="8.0" prefHeight="28.0" prefWidth="45.0" text="Age:">
+                     <font>
+                        <Font name="Impact" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="PlayerAgeOutput" layoutX="55.0" layoutY="8.0" prefHeight="28.0" prefWidth="45.0">
+                     <font>
+                        <Font name="Impact" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="84.0" layoutY="8.0" prefHeight="28.0" prefWidth="60.0" text="Years">
+                     <font>
+                        <Font name="Impact" size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="28.0" layoutY="193.0" prefHeight="43.0" prefWidth="257.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="10.0" layoutY="8.0" prefHeight="28.0" prefWidth="76.0" text="Height:">
+                     <font>
+                        <Font name="Impact" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="PlayerHeightOutput" layoutX="86.0" layoutY="8.0" prefHeight="28.0" prefWidth="45.0">
+                     <font>
+                        <Font name="Impact" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="129.0" layoutY="8.0" prefHeight="28.0" prefWidth="24.0" text="m">
+                     <font>
+                        <Font name="Impact" size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="28.0" layoutY="247.0" prefHeight="43.0" prefWidth="257.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="10.0" layoutY="8.0" prefHeight="28.0" prefWidth="60.0" text="Club: ">
+                     <font>
+                        <Font name="Impact" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="PlayerClubOutput" layoutX="61.0" layoutY="8.0" prefHeight="28.0" prefWidth="189.0">
+                     <font>
+                        <Font name="Impact" size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="28.0" layoutY="298.0" prefHeight="43.0" prefWidth="257.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="10.0" layoutY="8.0" prefHeight="28.0" prefWidth="90.0" text="Position:">
+                     <font>
+                        <Font name="Impact" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="PlayerPositionOutput" layoutX="99.0" layoutY="8.0" prefHeight="28.0" prefWidth="159.0">
+                     <font>
+                        <Font name="Impact" size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="28.0" layoutY="349.0" prefHeight="43.0" prefWidth="257.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="10.0" layoutY="8.0" prefHeight="28.0" prefWidth="146.0" text="Jersey Number:">
+                     <font>
+                        <Font name="Impact" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="PlayerNumberOutput" layoutX="167.0" layoutY="8.0" prefHeight="28.0" prefWidth="90.0">
+                     <font>
+                        <Font name="Impact" size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="28.0" layoutY="403.0" prefHeight="43.0" prefWidth="257.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="11.0" layoutY="8.0" prefHeight="28.0" prefWidth="146.0" text="Weekly Salary:">
+                     <font>
+                        <Font name="Impact" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="PlayerSalaryOutput" layoutX="154.0" layoutY="8.0" prefHeight="28.0" prefWidth="101.0">
+                     <font>
+                        <Font name="Impact" size="23.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <ImageView fx:id="image" fitHeight="201.0" fitWidth="189.0" layoutX="501.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

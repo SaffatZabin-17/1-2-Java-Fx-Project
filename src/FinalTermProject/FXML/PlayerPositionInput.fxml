@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FinalTermProject.Controller.PlayerPositionInputController">
+   <children>
+      <AnchorPane prefHeight="60.0" prefWidth="900.0" style="-fx-background-color: #990000;" AnchorPane.bottomAnchor="540.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutY="17.0" text="Football Manager 2021" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="17.0">
+               <font>
+                  <Font name="Impact" size="24.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="60.0" prefHeight="540.0" prefWidth="189.0" style="-fx-background-color: #1F1F1F;">
+         <children>
+            <Button fx:id="ExitButton" layoutX="14.0" layoutY="437.0" mnemonicParsing="false" onAction="#ExitButtonAction" prefHeight="34.0" prefWidth="159.0" text="Exit System">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <MenuButton layoutX="14.0" layoutY="144.0" mnemonicParsing="false" text="Search Players">
+               <items>
+                  <MenuItem fx:id="SearchByName" mnemonicParsing="false" onAction="#SearchByNameAction" text="Search By Name" />
+                  <MenuItem fx:id="SearchByCountry" mnemonicParsing="false" onAction="#SearchByCountryAction" text="Search By Country" />
+                  <MenuItem fx:id="SearchByPosition" mnemonicParsing="false" onAction="#SearchByPositionAction" text="Search By Position" />
+                  <MenuItem fx:id="SearchBySalary" mnemonicParsing="false" onAction="#SearchBySalaryAction" text="Search By Salary Range" />
+                  <MenuItem fx:id="CountryWisePlayerCount" mnemonicParsing="false" onAction="#CountryWisePlayerCountAction" text="Country Wise Player Count" />
+                  <MenuItem fx:id="MaxSalary" mnemonicParsing="false" onAction="#maxSalaryAction" text="Player(s) with the Maximum Salary" />
+                  <MenuItem fx:id="MaxAge" mnemonicParsing="false" onAction="#maxAgeAction" text="Player(s) with the Maximum Age" />
+                  <MenuItem fx:id="MaxHeight" mnemonicParsing="false" onAction="#maxHeightAction" text="Player(s) with the Maximum Height" />
+                  <MenuItem fx:id="TotalSalary" mnemonicParsing="false" onAction="#totalSalaryAction" text="Total Yearly Salary" />
+               </items>
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MenuButton>
+            <Button fx:id="DashboardButton" layoutX="16.0" layoutY="55.0" mnemonicParsing="false" onAction="#dashboardButtonAction" prefHeight="34.0" prefWidth="159.0" text="Dashboard">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="BuyPlayers" layoutX="15.0" layoutY="236.0" mnemonicParsing="false" onAction="#buyPlayersAction" prefHeight="34.0" prefWidth="159.0" text="Buy Players">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="SellPlayers" layoutX="14.0" layoutY="339.0" mnemonicParsing="false" onAction="#sellPlayersAction" prefHeight="34.0" prefWidth="159.0" text="Sell Players">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="189.0" layoutY="60.0" prefHeight="80.0" prefWidth="711.0" AnchorPane.bottomAnchor="460.0" AnchorPane.leftAnchor="189.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+         <children>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="30.0" text="Enter Player Position:">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="PlayerPositionInput" layoutX="175.0" layoutY="28.0" onAction="#playerPositionInput" prefHeight="25.0" prefWidth="189.0" promptText="Position">
+               <font>
+                  <Font name="Impact" size="14.0" />
+               </font>
+            </TextField>
+            <Button fx:id="SearchButton" layoutX="505.0" layoutY="23.0" mnemonicParsing="false" onAction="#SearchButtonAction" prefHeight="34.0" prefWidth="90.0" text="Search">
+               <font>
+                  <Font name="Impact" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="ResetButton" layoutX="607.0" layoutY="23.0" mnemonicParsing="false" onAction="#ResetButtonAction" prefHeight="34.0" prefWidth="90.0" text="Reset">
+               <font>
+                  <Font name="Impact" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="189.0" layoutY="140.0" prefHeight="461.0" prefWidth="711.0" style="-fx-background-color: #990000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="189.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="140.0" />
+   </children>
+</AnchorPane>
